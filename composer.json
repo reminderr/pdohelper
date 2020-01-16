@@ -1,0 +1,21 @@
+{
+    "name": "mainsim/pdohelper",
+    "type": "library",
+    "description": "PDO to Stored procedures helper classes.",
+    "license": "MIT",
+    "keywords" : ["pdohelper"],
+    "authors": [
+        {
+            "name": "Sven Macolic",
+            "email": "macolic.sven@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "mainsim\\pdohelper\\": "src/"
+        }
+    }
+}
