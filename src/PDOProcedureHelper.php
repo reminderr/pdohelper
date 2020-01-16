@@ -55,7 +55,7 @@ class PDOProcedureHelper {
 
                 switch(strtolower($this->engine)):
                         case 'mysql': $query = $this->pdo->prepare('CALL selectData(?, ?, ?, ?, ?, ?, ?, ?, ?)'); break;
-                        case 'sqlsrv': $query = $this->pdo->prepare('EXEC selectData ?, ?, ?, ?, ?, ?, ?, ?'); break;
+                        case 'sqlsrv': $query = $this->pdo->prepare('EXEC selectData ?, ?, ?, ?, ?, ?, ?, ?, ?'); break;
                 endswitch;
 
                 $query->bindParam(1, $function, PDO::PARAM_STR);
