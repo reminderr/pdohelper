@@ -2,7 +2,7 @@
 
 require_once dirname(__FILE__).'/vendor/autoload.php';
 
-use mainsim\pdohelper\PDOProcedureHelper;
+use reminderr\pdohelper\PDOProcedureHelper;
 
 $db = ['driver' => 'PDO',
             'engine' => 'MYSQL',
