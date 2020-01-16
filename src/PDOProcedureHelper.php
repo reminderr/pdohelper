@@ -5,7 +5,7 @@
  * @license MIT.
  */
 
-namespace qdance\pdohelper;
+namespace reminderr\pdohelper;
 
 use PDO;
 
