@@ -45,7 +45,7 @@ class PDOProcedureHelper {
                 $do = (object)$dataObject;  
                 $function = property_exists($do, 'function') ? $do->function : '';
                 $tables = property_exists($do, 'tables') ? 'FROM '.self::parseSelectTables($do->tables) : '';
-                $fields = property_exists($do, 'fields') ? $this->parseSelectFields($do->fields) : '';
+                $fields = property_exists($do, 'fields') ? self::parseSelectFields($do->fields) : '';
                 $joins = property_exists($do, 'join') ? self::parseSelectJoins($do->join) : '';
                 $condition = property_exists($do, 'condition') && sizeof((array)$do->condition) > 0 ? self::parseCondition($do->condition, (property_exists($do, 'operator') ? $do->operator : NULL)) : '';
                 $group = property_exists($do, 'group') ? 'GROUP BY '.$do->group : '';
@@ -343,7 +343,7 @@ class PDOProcedureHelper {
          * @param array $fields
          * @return string
          */
-         private function parseSelectFields($fields) {
+         private static function parseSelectFields($fields) {
                   $crumbs = '';
                   while($field = each($fields)):
                     if(preg_match('/\*/', $field['value']) || preg_match('/(IF|MAX|MIN|GROUP|AS|DISTINCT|SUM|COUNT|ROUND)/', $field['value'])):
