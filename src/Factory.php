@@ -39,7 +39,7 @@ class Factory {
       private function connect($db) {
              if(!isset($this->object['database'])):
                       $this->object['database'] = new Connect($db);
-                      $this->pdo = $this->object['database']->PDOConnect(); // TODO switch for other drivers (pg, mysql, mysqli)
+                      $this->pdo = $this->object['database']->PDOConnect(); 
                       $this->db = $this->object['database']->db;
                       $this->engine = $this->object['database']::$conn->engine;
              endif;
